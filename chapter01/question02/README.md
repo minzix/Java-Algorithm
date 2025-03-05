@@ -19,3 +19,10 @@ StuDY
 ```bash
 sTUdy
 ```
+
+6. 배운 점
+- `String`은 수정이 불가하므로 `StringBuilder` 사용
+```java
+StringBuilder result = new StringBuilder();
+result.append(<추가할문자>);
+```

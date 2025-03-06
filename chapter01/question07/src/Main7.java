@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main7 {
     public static String solution(String str) {
-        str = str.toLowerCase(); // 소문자로 통일
+        str = str.toLowerCase(); // 소문자로 통일하기
         char[] chars = str.toCharArray(); // 문자열 -> 문자 배열으로 변환
         int left = 0, right = str.length() - 1;
         while (left < right) {

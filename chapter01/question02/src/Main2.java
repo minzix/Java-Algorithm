@@ -1,19 +1,22 @@
 import java.util.Scanner;
 
 public class Main2 {
-    public static StringBuilder solution(String S) {
-        // String은 수정이 불가하므로 StringBuilder 사용
-        StringBuilder result = new StringBuilder();
+    public static String solution(String S) { // StringBuilder
+        // StringBuilder result = new StringBuilder();
+        String answer = "";
 
         // 대문자는 소문자로 소문자는 대문자로 변환
         for (char c : S.toCharArray()) {
             if (Character.isLowerCase(c)) {
-                result.append(Character.toUpperCase(c));
+                // result.append(Character.toUpperCase(c));
+                answer += Character.toUpperCase(c);
             } else if (Character.isUpperCase(c)) {
-                result.append(Character.toLowerCase(c));
+                // result.append(Character.toLowerCase(c));
+                answer += Character.toLowerCase(c);
             }
         }
-        return result;
+        // return result;
+        return answer;
     }
 
     public static void main(String[] args) {

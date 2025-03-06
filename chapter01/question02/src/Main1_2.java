@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main2 {
+public class Main1_2 {
     public static String solution(String S) { // StringBuilder
         // StringBuilder result = new StringBuilder();
         String answer = "";

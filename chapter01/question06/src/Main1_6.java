@@ -1,8 +1,6 @@
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
-public class Main6 {
+public class Main1_6 {
 //    public static String solution(String str) {
 //        Set<Character> uniqueChars = new HashSet<>(); // 중복 체크용 Set
 //        StringBuilder answer = new StringBuilder();

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class Main1_1 {
     public static int solution(String input, char character) {
         // 대소문자 구분 없이 실행하기
         input = input.toLowerCase();

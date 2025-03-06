@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main4 {
+public class Main1_4 {
 //    public static String[] solution (int num, String[] words) {
 //        String[] answer = new String[num];
 //        for (int i = 0; i < num; i++) { // words 배열 순회

@@ -24,7 +24,7 @@ c
 ```
 
 6. 풀이 하며 배운 점
-- `static`이 없으면 `Main main = new Main();`으로 객체를 생성한 후 `main.solution(a, b)`로 불러와야 하므로 주의!
+- `static`이 없으면 `Main1_1 main = new Main1_1();`으로 객체를 생성한 후 `main.solution(a, b)`로 불러와야 하므로 주의!
 - `String` 타입에서는 `<문자열>.toLowerCase();` 로 소문자 변경이 가능함
 - `char` 타입에서는 별도로 `Character.toLowerCase(<문자>);`를 사용해야 함!
 - `String` 타입에서는 `scanner.nextLine()` 으로 한 줄에 있는 모든 문자열 가져오기가 가능함

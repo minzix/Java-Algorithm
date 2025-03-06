@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main5 {
+public class Main1_5 {
     public static String solution(String str) {
         char[] arr = str.toCharArray(); // 문자열을 문자 배열로 변환
         int left = 0, right = str.length() - 1;

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main3 {
+public class Main1_3 {
     public static String solution(String str) {
         // 특정 구분자로 문자열을 나누기 위해 split 사용하기 (결과값은 배열)
         String[] words = str.split(" ");

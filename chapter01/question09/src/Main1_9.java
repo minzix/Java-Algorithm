@@ -11,11 +11,9 @@ public class Main1_9 {
             }
         }
         // 2. 0이 가장 앞에 있을 경우 삭제 (while로 처리해서 연달아 있는 경우 대비)
-        while (result.charAt(0) == '0') {
-            // 여기서, 자바에서는 같은 타입끼리만 비교할 수 있으므로 "0"이 아닌 '0'이라고 적어야 함
+        while (result.charAt(0) == '0') { // 자바에서는 같은 타입끼리만 비교할 수 있으므로 "0"이 아닌 '0'이라고 적어야 함
             result.deleteCharAt(0);
         }
-
         return new String(result);
     }
     public static void main(String[] args) {

@@ -1,48 +1,26 @@
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Scanner;
 
-// Map으로 시도 -> 연속으로 반복되는 문자끼리만 압축할 수 있음
-// 예를 들어, ASSSSSSSA의 경우 A1, A1을 각각 저장할 수 있어야 ASA로 압축이 가능함
-// 그러나 Map은 같은 키가 여러개 중복해서 존재할 수 없음
-
-// 배열로 시도해서 char[] 알파벳배열, int[] 숫자배열 이케 만들고
-// if (chars[i] == chars[i+1]) 숫자배열만 증가
-// else 숫자배열에 1 추가, 알파벳배열에 char[i] 추가
-// 이런 방향으로 가고 싶었는데 문제는 두 배열 사이를 mapping하는게 어려울 거 같음
-
 public class Main1_11 {
-    public static StringBuilder solution(String str) {
-        char[] chars = str.toCharArray();
-        Map<Character, Integer> map = new LinkedHashMap<>(); // LinkedHashMap : 삽입 순서를 유지함
-        StringBuilder result = new StringBuilder();
+    public static String solution(String str) {
+        String answer = "";
+        // i가 맨 마지막일 때 i+1이랑 비교하려고 하면 outofbound 오류가 발생하게 될 것임
+        // -> 문자열 순회하기 전에 맨 끝에 빈 문자 하나 붙이기 (+" ")
+        str = str + " ";
+        int count = 1;
+        // i와 i+1번째 문자를 계속해서 비교함
+        for (int i = 0; i < str.length() - 1; i++) { // str.length() - 1로 수정해서 i가 빈문자열이 되지 않도록 하기
+            if (str.charAt(i) == str.charAt(i + 1)) {
+                count++; // 같을 때: count++를 해주고 넘어감
 
-//        for (int i = 0; i < chars.length; i++) {
-//            if (map.containsKey(chars[i])) {
-//                map.put(chars[i], map.get(chars[i]) + 1);
-//            } else {
-//                map.put(chars[i], 1);
-//            }
-//        }
-        for (int i = 0; i < chars.length; i++) {
-            Map.Entry<Character, Integer> lastEntry = null;
-            for (Map.Entry<Character, Integer> entry : map.entrySet()) {
-                lastEntry = entry; // 마지막 엔트리 저장
-            }
-            if (lastEntry.getKey() == chars[i]) {
-                map.put(chars[i], map.get(chars[i]) + 1);
             } else {
-                map.put(chars[i], 1);
+                answer += str.charAt(i); // 다를 때: (1) 무조건 i에 해당하는 알파벳을 answer에 더해주기
+                if (count > 1) {
+                    answer += count; // 만약 count > 1일 경우 answer에 count도 더하기
+                    count = 1; // 한번 더해주고 나면 count는 초기화해야 함
+                }
             }
         }
-
-        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
-            result.append(entry.getKey());
-            if (entry.getValue() != 1) {
-                result.append(entry.getValue());
-            }
-        }
-        return result;
+        return answer;
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

@@ -15,12 +15,14 @@ public class Main1_6 {
 //    }
 
     // 강의 풀이 방식
-    public static String solution(String str) {
+    public static String solution(String str) { // indexOf 활용하기
         String answer = "";
         for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
+            int uniqueIndex = str.indexOf(str.charAt(i)); // 같은 문자가 여러번 있으면 가장 앞에 있는 문자의 인덱스를 반환
+            if (uniqueIndex == i) {
+                answer += str.charAt(i);
+            }
         }
-
         return answer;
     }
 

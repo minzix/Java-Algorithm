@@ -11,7 +11,6 @@ public class Main2_6 {
         }
         return true;
     }
-    // 5번 강의 듣고 나서 다시 보기
     public static ArrayList<Integer> solution(int N, int[] arr) {
         ArrayList<Integer> answer = new ArrayList<>();
         // 뒤집은 결과가 소수이면 answer에 담아서 반환해보자!

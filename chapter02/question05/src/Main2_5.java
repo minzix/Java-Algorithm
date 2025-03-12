@@ -1,26 +1,22 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
-// 잘 모르겠음.. 강의 다시 들어볼것!
 public class Main2_5 {
     public static int solution(int N) {
-        boolean[] isPrime = new boolean[N + 1];
-        Arrays.fill(isPrime, true); // 처음에는 모든 수를 소수(true)로 가정
-        isPrime[0] = isPrime[1] = false; // 0과 1은 소수가 아님
+        int answer = 0;
+        int[] arr = new int[N + 1]; // 0 ~ N 까지의 수를 모두 검사하기 위해!
+        // 이 때, 자바에서 int 타입 배열을 선언하면 자동으로 0들로 초기화됨!
+        for (int i = 2; i <= N; i++) {
+            // 0, 1은 당연히 소수가 아니므로 검사하는 것이 무의미해서 for 문에서 배제함
 
-        for (int i = 2; i * i <= N; i++) { // √N까지만 검사
-            if (isPrime[i]) {
-                for (int j = i * i; j <= N; j += i) { // 배수 지우기
-                    isPrime[j] = false;
+            // 이 때, arr[i] == 1: false, arr[i] == 0: true 로 이해해야 함
+            if (arr[i] == 0) { // 따라서 아직 1로 바뀌지 않은 arr[i]들은 무조건 다 0일 것.
+                answer++;
+                for (int j = i; j <= N; j = j + i) {
+                    arr[j] = 1; // 소수가 아니라는 표시
                 }
             }
         }
-
-        int count = 0;
-        for (int i = 1; i <= N; i++) {
-            if (isPrime[i]) count++; // 소수 개수 세기
-        }
-        return count;
+        return answer;
     }
 
     public static void main(String[] args) {

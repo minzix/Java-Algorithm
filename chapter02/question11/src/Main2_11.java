@@ -8,7 +8,8 @@ public class Main2_11 {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length - 1; j++) {
                 // 여기에서 matrix[i][j]랑 matrix[i][j + 1]랑 ... 비교해가며 만약 같은 원소가 존재 하면
-                // student[j]++;를 해줘야 함
+                // student[j]++;랑 student[j+1]++; 해줘야 함
+
             }
         }
         for (int i = 1; i < student.length; i++) {
